@@ -12,4 +12,4 @@ while not count == prime_quantity:
         count += 1
     position += 1
 
-print(position-1)
+print(position - 1)
