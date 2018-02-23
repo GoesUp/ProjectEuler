@@ -23,7 +23,7 @@ while not ended:
     initial += count
     count += 1
     if getNumberOfDivisors(initial) > 500:
-        print(initial, count)
+        print(initial)
         ended = True
     else:
         pass
