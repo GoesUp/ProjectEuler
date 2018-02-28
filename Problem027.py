@@ -1,5 +1,6 @@
 primes = []
 
+
 def preveri_pratstevilo(n):
     if (n < 2) or (n % 2 == 0):
         return False
@@ -12,11 +13,12 @@ def preveri_pratstevilo(n):
         primes.append(n)
         return True
 
+
 najvecji_b, najvecji_a = 0, 0
 najvecja_kolicina = 0
 
 for j in range(-1000, 1000):
-    for k in range(-1000,1001):
+    for k in range(-1000, 1001):
         count = 0
         while preveri_pratstevilo(count ** 2 + count * j + k):
             count += 1
