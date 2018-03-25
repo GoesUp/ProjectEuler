@@ -16,7 +16,7 @@ def sum_of_divisors(n):
 
 
 @Memo
-def particije(n):
+def particije(n):  # https://en.wikipedia.org/wiki/Partition_(number_theory)
     if n == 0 or n == 1:
         return 1
     return (1 / n) * sum(sum_of_divisors(n - a) * particije(a) for a in range(n))
