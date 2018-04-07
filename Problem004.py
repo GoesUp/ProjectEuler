@@ -1,9 +1,21 @@
-palindromi = []
+def run() -> int:
+    biggest_palindrome = 0
 
-for i in reversed(range(100, 1000)):
-    for j in reversed(range(100, 1000)):
-        current = i * j
-        if str(current) == str(current)[::-1]:
-            palindromi += [current]
+    for i in range(1000, 100, -1):
+        for j in range(i, 100, -1):
+            current_product = i * j
+            if current_product < biggest_palindrome:
+                break
+            if str(current_product) == str(current_product)[::-1]:
+                biggest_palindrome = current_product
+                break
 
-print(max(palindromi))
+    return biggest_palindrome
+
+
+if __name__ == "__main__":
+    from timeit import default_timer as timer
+
+    start = timer()
+    print("Solution:", run())
+    print("Duration:", timer() - start)

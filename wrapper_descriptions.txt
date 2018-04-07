@@ -1,0 +1,47 @@
+001|Steps:
+ 1. Check the first 999 integers - if they are divisible by both 3 and 5, save them into 'multiples'.
+ 2. Print the sum of 'multiples'.||
+
+002|Steps:
+ 1. Set three variables:
+  1a. 'first'       - contains the first number of the sequence,
+  1b. 'second'      - contains the second number of the sequence, and
+  1c. 'vsota_sodih' - will contain the sum of all even terms (starts with 2, the value of 'second').
+ 2. The algorithm will change the content of 'first' and 'second' like this:
+  2a. Store the value of 'second' into 'first'
+  2b. Store the sum of 'second' and the previous value of 'first' into 'second.'
+ 3. If the number in the variable 'second' is even, add this number to 'vsota_sodih'.
+ 4. Repeat steps 3 and 4 until 'second' is larger than 4 million.
+ 5. Print 'vsota_sodih'||
+
+003|Steps:
+ 1. Set two variables:
+  1a. 'factors' - will contain all the prime factors and
+  1b. 'number'  - contains the initial number (600851475143).
+ 2. Go from 1 to 'number' with 'i'.
+ 3. If 'i' divides 'number':
+  3a. Store 'i' in 'factors' and
+  3b. Divide 'number' by 'i'.
+ 4. If 'i' doesn't divide 'number', increase it by 1 and go to step 3.
+ 5. Repeat steps 2-4 until 'number' equals 1.
+ 6. Print the maximal element of 'factors'.||
+
+004|Steps:
+ 1. Set one variable:
+  1a. 'biggest_palindrome' - will contain the largest discovered palindrome number - initial value is 0
+ 2. Make two for loops: 'i' goes from 1000 to 100 and 'j' goes from 'i' to 100.
+ 3. Save i * j into 'current_product'.
+ 4. If 'current_product' is smaller than 'biggest_palindrome', go to the next value of 'i'.
+ 5. If 'current_product' is a palindrome number, save it to 'biggest_palindrome' and go to the next value if 'i'.
+ 6. Repeat steps 3-5 for all values if i.
+ 7. Return 'biggest_palindrome'.||
+
+065|Steps:
+ 1. Set one variable:
+  1a. 'fraction_parts' - contains 2 as the first one in the series of denominators
+ 2. Generate 99 digits from the series 1, 2, 1, 1, 4, 1, 1, 6, 1, ... and add them to 'fraction_parts'
+ 3. Initiate the 'ulomek' variable, which will contain the result.
+ 4. Set the initial value of 'ulomek' as the popped last element from 'fraction_parts'.
+ 5. Set ulomek to the popped last element from 'fraction_parts' plus 1 / ('ulomek').
+ 6. Repeat step 5 until 'fraction_parts' runs out of elements.
+ 7. Print the sum of the digits of the numerator of 'ulomek'.||
