@@ -1,6 +1,6 @@
 001|Steps:
  1. Check the first 999 integers - if they are divisible by both 3 and 5, save them into 'multiples'.
- 2. Print the sum of 'multiples'.||
+ 2. Return the sum of 'multiples'.||
 
 002|Steps:
  1. Set three variables:
@@ -12,7 +12,7 @@
   2b. Store the sum of 'second' and the previous value of 'first' into 'second.'
  3. If the number in the variable 'second' is even, add this number to 'vsota_sodih'.
  4. Repeat steps 3 and 4 until 'second' is larger than 4 million.
- 5. Print 'vsota_sodih'||
+ 5. Return 'vsota_sodih'.||
 
 003|Steps:
  1. Set two variables:
@@ -24,7 +24,7 @@
   3b. Divide 'number' by 'i'.
  4. If 'i' doesn't divide 'number', increase it by 1 and go to step 3.
  5. Repeat steps 2-4 until 'number' equals 1.
- 6. Print the maximal element of 'factors'.||
+ 6. Return the maximal element of 'factors'.||
 
 004|Steps:
  1. Set one variable:
@@ -36,6 +36,12 @@
  6. Repeat steps 3-5 for all values if i.
  7. Return 'biggest_palindrome'.||
 
+005|Steps:
+ 1. Create a list of numbers from 11 to 20 and save it into 'numbers'.
+ 2. Replace the first two items from 'numbers' with their lowest common multiple.
+ 3. Repeat step 2 until there is only one number left in 'numbers'.
+ 4. Return the said number.||
+
 065|Steps:
  1. Set one variable:
   1a. 'fraction_parts' - contains 2 as the first one in the series of denominators
@@ -44,4 +50,4 @@
  4. Set the initial value of 'ulomek' as the popped last element from 'fraction_parts'.
  5. Set ulomek to the popped last element from 'fraction_parts' plus 1 / ('ulomek').
  6. Repeat step 5 until 'fraction_parts' runs out of elements.
- 7. Print the sum of the digits of the numerator of 'ulomek'.||
+ 7. Return the sum of the digits of the numerator of 'ulomek'.||
