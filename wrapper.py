@@ -10,9 +10,10 @@ def check(i):
         return True
     if int(i) < 1:
         print("\nPlease enter a positive integer.")
+        assert False
     else:
         print("\nThis problem was not yet solved and described.")
-    return False
+        assert False
 
 
 def run(i):
@@ -59,7 +60,7 @@ def retrieve_solution(i):
 def prep_the_list():
     global helper_content, solutions
     with open("wrapper_descriptions.txt", "r") as f:
-        content = f.read()[:-1].split("||\n\n")
+        content = f.read().split("||\n\n")
         for i in content:
             i = i.split("|")
             helper_content[i[0]] = i[1]
@@ -77,15 +78,22 @@ If you want to see my written description of the algorithm instead, add the '?' 
 If you only want to see the solution without calculating it on your machine, add the '!' sign after the number.\n""")
 while True:
     print("===============================================")
-    vnos = input("Enter the problem number: ")
-    if vnos == "exit" or vnos == "":
-        break
-    elif vnos[-1] == "?":
-        help(vnos[:-1].zfill(3))
-    elif vnos[-1] == "!":
-        retrieve_solution(vnos[:-1].zfill(3))
-    else:
-        run(vnos.zfill(3))
 
-    print("\nDone!")
+    vnos = input("Enter the problem number: ")
+    if vnos == "exit" or vnos == "" or vnos == "\n":
+        print("Exiting!")
+        break
+    try:
+        if vnos[-1] == "?":
+            help(vnos[:-1].zfill(3))
+        elif vnos[-1] == "!":
+            retrieve_solution(vnos[:-1].zfill(3))
+        else:
+            run(vnos.zfill(3))
+        print("\nDone!")
+    except ValueError:
+        print("\nThere seems to be a problem with your input. Please, try again.")
+    except AssertionError:
+        pass
+
     print("===============================================\n")

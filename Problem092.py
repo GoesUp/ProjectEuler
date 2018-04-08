@@ -9,7 +9,7 @@ def one_or_eighty_nine(n):
         return
     sum_of_squares = sum([int(b) ** 2 for b in str(n)])
     if sum_of_squares not in goes_to:
-        ćone_or_eighty_nine(sum_of_squares)
+        one_or_eighty_nine(sum_of_squares)
     goes_to[n] = goes_to[sum_of_squares]
     return
 

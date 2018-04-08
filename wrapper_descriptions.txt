@@ -42,6 +42,23 @@
  3. Repeat step 2 until there is only one number left in 'numbers'.
  4. Return the said number.||
 
+006|Steps:
+ 1. Calculate the sum of the squares of the first one hundred natural numbers and save it into 'sum_of_the_squares'.
+ 2. Calculate the square of the sum of the first one hundred natural numbers and save it into 'square_of_the_sum'.
+ 3. Return the difference between 'square_of_the_sum' and 'sum_of_the_squares'.||
+
+007|Steps:
+ 1. Set four variables:
+  1a. 'prime_quantity' - here, we specify which prime number in a row we want to calculate.
+  1b. 'sito'           - a list, filled with as many True values as we need to check to get at least 'prime_quantity' of primes.
+  1c. 'count'          - set to 0, will be increased by 1 every time we find a prime.
+  1d. 'position'       - set to 2 (the first prime), will be increased every time we check a number for its primality.
+ 2. Check the item in 'sito' with the index specified in 'position'.
+ 3. If this item's value is True, set all of the items with indexes being multiples of 'position' to False. Also, increase 'count' by 1.
+ 4. Increase position by 1 regardless of the current index's primality.
+ 5. Repeat steps 2-4 as long as 'count' is smaller than 'prime_quantity'.
+ 6. Return the value of 'position' decreased by 1 (because we added 1 unnecessarily in step 4).||
+
 065|Steps:
  1. Set one variable:
   1a. 'fraction_parts' - contains 2 as the first one in the series of denominators
