@@ -89,3 +89,15 @@
   5a. If 'k' is in 'primes', we skip to the next value 'k', since we already added all primes numbers to the 'radicals' list.
   5b. Add a tuple to 'radicals': the first value is the product of all prime factors of 'k' from 'prime_factors' and the second value is 'k' itself.
  6. Sort 'radicals' by the first element in the tuple and return the second value in the 10000th tuple.||
+
+206|Steps:
+ 1. Set two variables:
+  1a. 'low'    - set this value to the lowest possible value we ought to check: the square root of 10203040506070809.
+      EXPLANATION - We omit the last two digits because if the last digit is zero, the one before must be the same
+      since this number is the square of a positive integer. In order to get the right result, we will multiply the
+      final result by 10 when we find a matching number.
+  1b. 'static' - set this to '123456789' in order to check numbers in step 2 whether they are valid or not.
+ 2. Run the following steps until a breaking event occurs:
+  2a. If the string value of every second number of 'low' matches 'static', go to step 3.
+  2b. Otherwise, increase 'low' by 2, since the first value of 'low' is odd and we cannot get 9 at the end of the square with an even number.||
+ 3. Return the value of 'low', multiplied by 10.||
