@@ -68,3 +68,24 @@
  5. Set ulomek to the popped last element from 'fraction_parts' plus 1 / ('ulomek').
  6. Repeat step 5 until 'fraction_parts' runs out of elements.
  7. Return the sum of the digits of the numerator of 'ulomek'.||
+
+124|Steps:
+ 1. Set three variables:
+  1a. 'primes'        - generate all primes up to 100k and load them into this variable
+  1b. 'prime_factors' - this will be used to save distinct prime factors for all number up to 100k (preloaded with the value for 1)
+  1c. 'radicals'      - this will be used to save radical values of all numbers up to 100k
+ 2. For each value from 'primes', add itself to 'prime_factors'.
+ 3. Make a for loop: 'j' goes from 4 to 100001:
+  3a. If 'j' is in 'primes', which means we already added its value to 'prime_factors', we skip to the next 'j'.
+  3b. Set 'counter' to 2 and 'factors' to an empty set.
+  3c. If 'j' equals 1, go to step 3g.
+  3d. If 'j' is already in 'prime_factors', merge its set from 'prime_factors' with 'factors' and go to step 3g.
+  3e. If 'counter' divides 'j', add 'counter' to 'factors', otherwise increase 'counter' by 1.
+  3f. Go to step 3c.
+  3g. Add 'factors' to 'prime_factors' for the initial value of 'j'.
+  3h. Repeat steps 3a-3g for all remaining values of 'j'.
+ 4. For all values 'o' in 'primes', add such tuples to 'radicals': (o, o).
+ 5. For all values 'k' in prime_factors:
+  5a. If 'k' is in 'primes', we skip to the next value 'k', since we already added all primes numbers to the 'radicals' list.
+  5b. Add a tuple to 'radicals': the first value is the product of all prime factors of 'k' from 'prime_factors' and the second value is 'k' itself.
+ 6. Sort 'radicals' by the first element in the tuple and return the second value in the 10000th tuple.||
