@@ -50,11 +50,13 @@
 007|Steps:
  1. Set four variables:
   1a. 'prime_quantity' - here, we specify which prime number in a row we want to calculate.
-  1b. 'sito'           - a list, filled with as many True values as we need to check to get at least 'prime_quantity' of primes.
+  1b. 'sito'           - a list, filled with as many True values as we need to check to get at least 'prime_quantity'
+                         of primes.
   1c. 'count'          - set to 0, will be increased by 1 every time we find a prime.
   1d. 'position'       - set to 2 (the first prime), will be increased every time we check a number for its primality.
  2. Check the item in 'sito' with the index specified in 'position'.
- 3. If this item's value is True, set all of the items with indexes being multiples of 'position' to False. Also, increase 'count' by 1.
+ 3. If this item's value is True, set all of the items with indexes being multiples of 'position' to False. Also,
+    increase 'count' by 1.
  4. Increase position by 1 regardless of the current index's primality.
  5. Repeat steps 2-4 as long as 'count' is smaller than 'prime_quantity'.
  6. Return the value of 'position' decreased by 1 (because we added 1 unnecessarily in step 4).||
@@ -72,7 +74,8 @@
 124|Steps:
  1. Set three variables:
   1a. 'primes'        - generate all primes up to 100k and load them into this variable
-  1b. 'prime_factors' - this will be used to save distinct prime factors for all number up to 100k (preloaded with the value for 1)
+  1b. 'prime_factors' - this will be used to save distinct prime factors for all number up to 100k (preloaded with the
+                        value for 1)
   1c. 'radicals'      - this will be used to save radical values of all numbers up to 100k
  2. For each value from 'primes', add itself to 'prime_factors'.
  3. Make a for loop: 'j' goes from 4 to 100001:
@@ -86,9 +89,24 @@
   3h. Repeat steps 3a-3g for all remaining values of 'j'.
  4. For all values 'o' in 'primes', add such tuples to 'radicals': (o, o).
  5. For all values 'k' in prime_factors:
-  5a. If 'k' is in 'primes', we skip to the next value 'k', since we already added all primes numbers to the 'radicals' list.
-  5b. Add a tuple to 'radicals': the first value is the product of all prime factors of 'k' from 'prime_factors' and the second value is 'k' itself.
+  5a. If 'k' is in 'primes', we skip to the next value 'k', since we already added all primes numbers to the 'radicals'
+      list.
+  5b. Add a tuple to 'radicals': the first value is the product of all prime factors of 'k' from 'prime_factors' and the
+      second value is 'k' itself.
  6. Sort 'radicals' by the first element in the tuple and return the second value in the 10000th tuple.||
+
+187|Steps:
+ 1. Set two variables:
+  1a. 'pra'   - generate all primes up to 50 million and load them into this variable
+      EXPLANATION - We don't need to generate primes up to 100 million since numbers between 50 mil and 100 mil cannot
+      possibly produce composite numbers below 100 million.
+  1b. 'valid' - we will save valid composite numbers into this set
+ 2. Make two for loops: 'i' iterates over all items in 'pra' and 'j' does the same, but ignores all primes before 'k'.
+  2a. Multiply the primes from 'pra' with indexes 'i' and 'j' and store this product into 'product'.
+  2b. If 'product' is lower than the required limit of 1e8, store it into 'valid'.
+  2c. If 'product' is higher than the said limit, skip to the next value of 'i'.
+  2d. Repeat steps 2a-2c for all values of 'i'.
+ 3. Return the number of elements in 'valid'.||
 
 206|Steps:
  1. Set two variables:
@@ -99,5 +117,6 @@
   1b. 'static' - set this to '123456789' in order to check numbers in step 2 whether they are valid or not.
  2. Run the following steps until a breaking event occurs:
   2a. If the string value of every second number of 'low' matches 'static', go to step 3.
-  2b. Otherwise, increase 'low' by 2, since the first value of 'low' is odd and we cannot get 9 at the end of the square with an even number.||
+  2b. Otherwise, increase 'low' by 2, since the first value of 'low' is odd and we cannot get 9 at the end of the square
+      with an even number.
  3. Return the value of 'low', multiplied by 10.||
