@@ -1,5 +1,5 @@
-from functools import reduce
 from eulerlib import primes
+import useful
 
 
 def run() -> int:
@@ -7,27 +7,17 @@ def run() -> int:
     # numbers in this problem can't be divisible by primes higher than that
     pra = [a ** 2 for a in primes(10)]
 
-    # Define functions for calculating the factorial, the binomial coefficient and checking whether a number is prime
-    def factorial(n: int) -> int:
-        if n == 0:
-            return 1
-        else:
-            return reduce(lambda x, y: x * y, list(range(1, n + 1)))
-
-    prime = lambda y: y % 2 == 1 and len(list(filter(lambda x: y % x == 0, range(3, int(y ** 0.5) + 1, 2)))) == 0
-    binomial = lambda n, k: factorial(n) // (factorial(k) * factorial(n - k))
-
     # Initialize the set for storing all numbers that appear in the Pascal triangle and then fill the said set
     pascal = set()
 
     for i in range(51):
         for j in range(i // 2 + 1):
-            pascal.add(binomial(i, j))
+            pascal.add(useful.binomial(i, j))
 
     # Check all numbers stored in 'pascal' and store the valid ones into 'valid'
     valid = set()
     for j in sorted(pascal):
-        if prime(j):
+        if useful.is_prime(j):
             # If the number itself is prime, it cannot be divided by any square of a prime. Add it to the valid ones.
             valid.add(j)
         else:
