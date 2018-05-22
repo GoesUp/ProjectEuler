@@ -1,5 +1,4 @@
-def factorial(n: int) -> int:
-    return [1, 0][n > 1] or factorial(n - 1) * n
+from math import factorial
 
 
 def binomial(n: int, k: int) -> int:
